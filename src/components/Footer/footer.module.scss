@@ -1,0 +1,39 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  height: 64px;
+  background: #ffffff;
+  @media(max-width:576px){
+    height: 84px;
+    display: block;
+    padding: 0 16px;
+    text-align: center;
+  }
+  p{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #8A8A8A;
+    @media(max-width:576px){
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: #333333;
+      font-family: "Factor A";
+    }
+  }
+  .links{
+    button{
+      background: none;
+      border: none;
+      img{
+        width: 19.5px;
+        height: 19.5px;
+      }
+    }
+  }
+}
