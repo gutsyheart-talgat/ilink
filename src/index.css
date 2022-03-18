@@ -1,3 +1,18 @@
 body {
   margin: 0;
 }
+
+.MuiMobileStepper-dot{
+  width: 12px !important;
+  height: 5px !important;
+  border-radius: 0 !important;
+  background-color: #585CC6 !important;
+  transition: all 0.4s ease 0s !important;
+
+}
+.MuiMobileStepper-dotActive{
+  width: 24px !important;
+  height: 5px !important;
+  border-radius: 0 !important;
+  background: blue !important;
+}

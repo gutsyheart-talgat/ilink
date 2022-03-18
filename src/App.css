@@ -1,2 +1,8 @@
 @import './fonts/gilroy/stylesheet.css';
-@import './fonts/FactorA/stylesheet.css'
+@import './fonts/FactorA/stylesheet.css';
+
+.css-26w9jf-MuiMobileStepper-dot{
+    border-radius: 0;
+    width: 100px;
+    height: 100px;
+}

@@ -1,104 +1,121 @@
-.main{
-  background: #585CC6;
+.main {
+  background: #585cc6;
   padding-top: 93px;
   padding-bottom: 106px;
-  @media(max-width:576px){
+  @media (max-width: 576px) {
     padding-top: 43px;
     padding-bottom: 82px;
   }
-  h1{
+  h1 {
     margin: 0 0 0 80px;
-    font-family: 'Factor A';
+    font-family: "Factor A";
     font-style: normal;
     font-weight: 500;
     font-size: 124px;
     line-height: 148px;
-    color: #FFFFFF;
-    @media(max-width:576px){
+    color: #ffffff;
+    @media (max-width: 576px) {
       font-size: 48px;
       line-height: 54px;
       margin: 0 0 0 16px;
     }
   }
-  .about{
-    margin: 88px 0 120px 80px;
+  .about {
+    margin: 88px 80px 120px 80px;
     display: flex;
-    @media(max-width:576px){
+    @media (max-width: 576px) {
       margin: 64px 16px 57px 16px;
       display: block;
     }
-    .ava{
+    .ava {
       width: 519px;
       height: 383px;
       margin-top: 32px;
       background: url(../../img/photo.jpg) center / cover;
-      @media(max-width:576px){
+      @media (max-width: 576px) {
         width: 304px;
         height: 200px;
         margin: 0;
       }
     }
-    .aboutText{
-      width: 761px;
-      height: 383px;
+    .aboutText {
+      width: fit-content;
       background: #fff;
-      @media(max-width:576px){
+      padding: 40px;
+      margin-bottom: 20px;
+      @media (max-width: 576px) {
         width: 288px;
         height: 482px;
         margin: 0;
       }
-      .marg{
-        margin: 40px;
-        .top{
+      .marg {
+        .top {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          .name{
+          margin-bottom: 20px;
+          @media (max-width: 576px) {
+            display: block;
+            margin-bottom: 16px;
+          }
+          .name {
             margin: 0;
-            font-family: 'Factor A';
+            font-family: "Factor A";
             font-style: normal;
             font-weight: 700;
             font-size: 32px;
             line-height: 32px;
-            color: #585CC6;
+            color: #585cc6;
+            @media (max-width: 576px) {
+              font-size: 24px;
+              line-height: 32px;
+            }
           }
-          .date{
+          .date {
             margin: 0;
-            font-family: 'Gilroy';
+            font-family: "Gilroy";
             font-style: normal;
             font-weight: 400;
             font-size: 18px;
             line-height: 24px;
-            color: #8A8A8A;
-          }
-        }
-        .info{
-          display: flex;
-          grid-column-gap: 40px;
-          p{
-            margin: 0;
-            font-family: 'Gilroy';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 24px;
-            color: #333333;
-            span{
-              font-weight: normal;
+            color: #8a8a8a;
+            @media (max-width: 576px) {
+              font-size: 16px;
+              line-height: 22px;
             }
           }
         }
+        .info {
+          display: flex;
+          grid-column-gap: 40px;
+          margin-bottom: 18px;
+          flex-wrap: wrap;
+        }
+        p {
+          margin: 0;
+          font-family: "Gilroy";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+          color: #333333;
+          span {
+            font-weight: normal;
+          }
+          @media (max-width: 576px) {
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+        .pet {
+          display: flex;
+          grid-column-gap: 15px;
+          margin-top: 35px;
+          @media (max-width: 576px) {
+            margin-top: 15px;
+          }
+        }
       }
-    }
-  }
-  .otzyvy{
-    width: 1198px;
-    height: 525px;
-    background: #fff;
-    @media(max-width:576px){
-      width: 304px;
-      height: 479px;
-      margin: 0;
     }
   }
 }
