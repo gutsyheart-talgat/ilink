@@ -1,0 +1,206 @@
+.Form__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  .error {
+    color: #eb5757;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 130%;
+    margin-top: -32px;
+  }
+  .file {
+    display: none;
+  }
+  .Form {
+    background-color: #fff;
+    padding: 25px;
+    @media (max-width: 576px) {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .formHead {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      @media (max-width: 576px) {
+        justify-content: space-between;
+        width: 100%;
+      }
+      h2 {
+        font-family: "Factor A";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: #333333;
+        margin: 0;
+        @media (max-width: 576px) {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+      button {
+        background: none;
+        border: none;
+      }
+    }
+    .forms {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 32px;
+      @media (max-width: 576px) {
+        align-items: center;
+      }
+      div {
+        display: flex;
+        align-items: flex-end;
+        grid-gap: 16px;
+        @media (max-width: 576px) {
+          display: block;
+        }
+        label {
+          width: 395px;
+          @media (max-width: 576px) {
+            width: 256px;
+          }
+          display: flex;
+          flex-direction: column;
+          grid-gap: 14px;
+          p {
+            margin: 0;
+            font-family: "Factor A";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: #333333;
+            @media (max-width: 576px) {
+              font-size: 14px;
+              line-height: 18px;
+            }
+          }
+          input {
+            height: 46px;
+            width: 100%;
+            @media (max-width: 576px) {
+              height: 36px;
+            }
+          }
+        }
+        .addPhoto {
+          width: 217px;
+          height: 52px;
+          grid-gap: 11px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          background: #585cc6;
+          border-radius: 2px;
+          border: none;
+          font-family: "Gilroy";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          color: #ffffff;
+          margin-top: 12px;
+          @media (max-width: 576px) {
+            font-size: 14px;
+            line-height: 18px;
+            height: 42px;
+            width: 149px;
+          }
+
+          input {
+            display: none;
+          }
+        }
+      }
+      label {
+        width: 630px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 14px;
+        @media (max-width: 576px) {
+          width: 256px;
+        }
+        p {
+          margin: 0;
+          font-family: "Factor A";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          color: #333333;
+          @media (max-width: 576px) {
+            font-size: 14px;
+            line-height: 18px;
+          }
+        }
+        input {
+          width: 100%;
+          height: 100px;
+        }
+      }
+      .foot {
+        display: flex;
+        align-items: center;
+        button {
+          width: 217px;
+          height: 52px;
+          grid-gap: 11px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #585cc6;
+          border-radius: 2px;
+          border: none;
+          font-family: "Gilroy";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 18px;
+          color: #ffffff;
+          padding: 15px;
+          margin-top: 12px;
+          @media (max-width: 576px) {
+            font-size: 14px;
+            line-height: 18px;
+            height: 42px;
+            width: 149px;
+          }
+        }
+        @media (max-width: 576px) {
+          display: block;
+        }
+        div {
+          display: flex;
+          align-items: center;
+          @media (max-width: 576px) {
+            width: 256px;
+          }
+          p {
+            font-family: "Gilroy";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #8a8a8a;
+          }
+        }
+      }
+    }
+  }
+}

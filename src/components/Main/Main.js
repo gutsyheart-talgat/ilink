@@ -1,24 +1,10 @@
 import React, { useEffect, useState } from "react";
 import cl from "./main.module.scss";
 import food from "../../img/DogFood.svg";
-import avatar from '../../img/avatar.jpg'
-import { useTheme } from "@mui/material/styles";
+import avatar from '../../img/photo.jpg'
 import Slider from './Slider/Slider'
 
 const Main = () => {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = useState(0);
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-  const handleStepChange = (step) => {
-    setActiveStep(step);
-  };
   return (
     <div className={cl.main}>
       <h1>Добро пожаловать в академию!</h1>

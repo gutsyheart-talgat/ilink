@@ -12,6 +12,7 @@
       width: 304px;
       height: 479px;
       margin: 0;
+      padding: 20px 16px;
     }
     .otzyvHead {
       display: flex;
@@ -61,8 +62,10 @@
         display: flex;
         grid-gap: 25px;
         height: 280px;
+        width: 100%;
+        justify-content: center;
         .slider_left {
-          width: 50%;
+          width: 42%;
           background: #f5f5f5;
           border-radius: 2px;
           padding: 24px;

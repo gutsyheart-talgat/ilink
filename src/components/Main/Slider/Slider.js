@@ -8,6 +8,9 @@ import card from "../../../img/ava.jpg";
 import left from '../../../img/left.svg'
 import plus from "../../../img/plus.svg";
 import right from '../../../img/right.svg'
+import Form from "../../Form/Form";
+import { useMediaQuery } from "@mui/material";
+
 
 const banners = [
   {
@@ -56,6 +59,7 @@ const banners = [
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const Slider = () => {
+  const isMob  = useMediaQuery('(max-width:576px')
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
 
@@ -69,14 +73,15 @@ const Slider = () => {
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
+  const [showform, setShowform] = useState(false)
   return (
     <div className={cl.SliderPage}>
       <div className={cl.otzyvy}>
         <div className={cl.otzyvHead}>
           <h2>Отзывы</h2>
-          <button>
+          <button onClick ={()=> setShowform(!showform)} style={{cursor:"pointer"}}>
             <img src={plus} />
-            <p>Добавить отзыв</p>
+            <p style={isMob ? {display:'none'}: {display:"block"}}>Добавить отзыв</p>
           </button>
         </div>
         <div className={cl.Slider}>
@@ -90,7 +95,8 @@ const Slider = () => {
           >
             {banners.map((_step, index) => {
               const { id, slides } = _step;
-
+              
+              
               return (
                 <div className={cl.slider}>
                   {slides.map((step, index) => (
@@ -121,7 +127,7 @@ const Slider = () => {
           />
         </div>
       </div>
-      <div className={cl.cont}>
+      <div className={cl.cont} style={isMob ? {display:'none'} : {display:'block'}}>
         <div className={cl.buttons_cont}>
           <button
             className={cl.buttons}
@@ -139,6 +145,9 @@ const Slider = () => {
           </button>
         </div>
       </div>
+      {
+        showform ? <Form show={showform} setShow={setShowform}/> : null
+      }
     </div>
   );
 };

@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
 import { StylesProvider } from '@mui/styles'
+import  Form  from "./components/Form/Form";
 
 function App() {
   return (
