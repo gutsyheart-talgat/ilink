@@ -5,7 +5,7 @@
   padding: 0 80px;
   max-height: 64px;
   background: #ffffff;
-  @media(max-width:576px){
+  @media(max-width:768px){
     height: 84px;
     display: block;
     padding: 0 16px;
@@ -18,7 +18,7 @@
     font-size: 16px;
     line-height: 20px;
     color: #8A8A8A;
-    @media(max-width:576px){
+    @media(max-width:768px){
       font-weight: 400;
       font-size: 12px;
       line-height: 20px;

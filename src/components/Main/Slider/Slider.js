@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { useTheme } from "@mui/material/styles";
@@ -57,8 +57,8 @@ const banners = [
 ];
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const Slider = ({showAnswer,setShowAnswer}) => {
-  const isMob = useMediaQuery("(max-width:700px");
+const Slider = ({ showAnswer, setShowAnswer }) => {
+  const isMob = useMediaQuery("(max-width:768px");
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
 
@@ -142,7 +142,7 @@ const Slider = ({showAnswer,setShowAnswer}) => {
           </AutoPlaySwipeableViews>
           <MobileStepper
             variant="dots"
-            steps={isMob ? 4:2}
+            steps={isMob ? 4 : 2}
             position="static"
             activeStep={activeStep}
           />
@@ -169,7 +169,14 @@ const Slider = ({showAnswer,setShowAnswer}) => {
           </button>
         </div>
       </div>
-      {showform ? <Form answer={showAnswer} setAnswer={setShowAnswer} show={showform} setShow={setShowform} /> : null}
+      {showform ? (
+        <Form
+          answer={showAnswer}
+          setAnswer={setShowAnswer}
+          show={showform}
+          setShow={setShowform}
+        />
+      ) : null}
     </div>
   );
 };

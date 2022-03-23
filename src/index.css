@@ -7,6 +7,7 @@ body {
   height: 5px !important;
   border-radius: 0 !important;
   background-color: #585CC6 !important;
+  opacity: 0.3 !important;
   transition: all 0.4s ease 0s !important;
 
 }
@@ -14,11 +15,10 @@ body {
   width: 24px !important;
   height: 5px !important;
   border-radius: 0 !important;
-  background: blue !important;
+  background: #585CC6 !important;
+  opacity: 1 !important;
 }
-.react-swipeable-view-container{
-  
-}
+
 .MuiLinearProgress-bar1{
   background-color: red !important;
 }
