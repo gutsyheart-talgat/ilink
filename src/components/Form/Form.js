@@ -18,10 +18,10 @@ const validateSchema = yup.object().shape({
   name: yup.string().required("Введите ваше имя!"),
   desc: yup.string().required("Введите ваше имя!"),
 });
-const Form = ({ show, setShow,answer,setAnswer }) => {
+
+const Form = ({ show, setShow,answer,setAnswer, handleModal }) => {
+  const [prog,setProg] = useState(false)
   const [progress, setProgress] = React.useState(0);
-  const [prog, setProg] = React.useState(false);
-  
   React.useEffect(() => {
     const timer = setInterval(() => {
        setProgress((oldProgress) => {
@@ -40,20 +40,19 @@ const Form = ({ show, setShow,answer,setAnswer }) => {
     data.append("photo", initialValues.photo);
     setProg(true);
   };
-  console.log(progress);
   return (
     <div className={cl.Form__container}>
       <div className={cl.Form}>
         <div className={cl.formHead}>
           <h2>Отзыв</h2>
-          <button style={{ cursor: "pointer" }} onClick={() => setShow(false)}>
+          <button style={{ cursor: "pointer" }} onClick={() => handleModal()}>
             <img src={exit} />
           </button>
         </div>
         <Formik
           onSubmit={(values) => {
             alert([`${JSON.stringify(values, null, 4)}`]);
-            setShow(false);
+            handleModal()
             setAnswer(true)
           }}
           initialValues={initialValues}

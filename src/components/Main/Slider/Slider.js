@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import { useTheme } from "@mui/material/styles";
@@ -73,13 +73,22 @@ const Slider = ({ showAnswer, setShowAnswer }) => {
     setActiveStep(step);
   };
   const [showform, setShowform] = useState(false);
+
+  const handleModal = () => {
+    setShowform(!showform)
+    if (!showform === true){
+      document.body.style.overflow="hidden"
+    }else if (!showform === false){
+      document.body.style.overflow="auto"
+    }
+  }
   return (
-    <div className={cl.SliderPage}>
+    <div className={cl.SliderPage} >
       <div className={cl.otzyvy}>
         <div className={cl.otzyvHead}>
           <h2>Отзывы</h2>
           <button
-            onClick={() => setShowform(!showform)}
+            onClick={() => handleModal()}
             style={{ cursor: "pointer" }}
           >
             <img src={plus} />
@@ -175,6 +184,7 @@ const Slider = ({ showAnswer, setShowAnswer }) => {
           setAnswer={setShowAnswer}
           show={showform}
           setShow={setShowform}
+          handleModal={handleModal}
         />
       ) : null}
     </div>
