@@ -1,0 +1,13 @@
+@media (max-width: 700px) {
+  .react-swipeable-view-container {
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+}
+.MuiLinearProgress-bar1{
+  background-color: red !important;
+}

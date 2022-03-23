@@ -16,3 +16,9 @@ body {
   border-radius: 0 !important;
   background: blue !important;
 }
+.react-swipeable-view-container{
+  
+}
+.MuiLinearProgress-bar1{
+  background-color: red !important;
+}

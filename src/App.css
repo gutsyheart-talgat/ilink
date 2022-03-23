@@ -6,3 +6,10 @@
     width: 100px;
     height: 100px;
 }
+
+.MuiLinearProgress-bar1{
+    background: red !important;
+}
+.MuiBox-root{
+    display: block !important;
+}

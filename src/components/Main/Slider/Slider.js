@@ -5,12 +5,11 @@ import { useTheme } from "@mui/material/styles";
 import cl from "./slider.module.scss";
 import MobileStepper from "@mui/material/MobileStepper";
 import card from "../../../img/ava.jpg";
-import left from '../../../img/left.svg'
+import left from "../../../img/left.svg";
 import plus from "../../../img/plus.svg";
-import right from '../../../img/right.svg'
+import right from "../../../img/right.svg";
 import Form from "../../Form/Form";
 import { useMediaQuery } from "@mui/material";
-
 
 const banners = [
   {
@@ -58,8 +57,8 @@ const banners = [
 ];
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-const Slider = () => {
-  const isMob  = useMediaQuery('(max-width:576px')
+const Slider = ({showAnswer,setShowAnswer}) => {
+  const isMob = useMediaQuery("(max-width:700px");
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);
 
@@ -73,15 +72,20 @@ const Slider = () => {
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
-  const [showform, setShowform] = useState(false)
+  const [showform, setShowform] = useState(false);
   return (
     <div className={cl.SliderPage}>
       <div className={cl.otzyvy}>
         <div className={cl.otzyvHead}>
           <h2>Отзывы</h2>
-          <button onClick ={()=> setShowform(!showform)} style={{cursor:"pointer"}}>
+          <button
+            onClick={() => setShowform(!showform)}
+            style={{ cursor: "pointer" }}
+          >
             <img src={plus} />
-            <p style={isMob ? {display:'none'}: {display:"block"}}>Добавить отзыв</p>
+            <p style={isMob ? { display: "none" } : { display: "block" }}>
+              Добавить отзыв
+            </p>
           </button>
         </div>
         <div className={cl.Slider}>
@@ -91,14 +95,31 @@ const Slider = () => {
             index={activeStep}
             onChangeIndex={handleStepChange}
             enableMouseEvents
-            style={{marginBottom:"30px"}}
+            style={{ marginBottom: "30px" }}
+            className={cl.Swipe}
           >
             {banners.map((_step, index) => {
               const { id, slides } = _step;
-              
-              
-              return (
-                <div className={cl.slider}>
+
+              return isMob ? (
+                slides.map((step, index) => (
+                  <div
+                    key={index}
+                    style={{ overflow: "hidden" }}
+                    className={cl.slider_Mob}
+                  >
+                    <div>
+                      <div>
+                        <img src={step.img} className={cl.img} />
+                        <h3>{step.title}</h3>
+                      </div>
+                      <p>{step.date}</p>
+                    </div>
+                    <p>{step.description}</p>
+                  </div>
+                ))
+              ) : (
+                <div className={!isMob && cl.slider}>
                   {slides.map((step, index) => (
                     <div
                       key={index}
@@ -107,7 +128,7 @@ const Slider = () => {
                     >
                       <div>
                         <div>
-                          <img src={step.img}  className={cl.img}/>
+                          <img src={step.img} className={cl.img} />
                           <h3>{step.title}</h3>
                         </div>
                         <p>{step.date}</p>
@@ -121,33 +142,34 @@ const Slider = () => {
           </AutoPlaySwipeableViews>
           <MobileStepper
             variant="dots"
-            steps={banners.length}
+            steps={isMob ? 4:2}
             position="static"
             activeStep={activeStep}
           />
         </div>
       </div>
-      <div className={cl.cont} style={isMob ? {display:'none'} : {display:'block'}}>
+      <div
+        className={cl.cont}
+        style={isMob ? { display: "none" } : { display: "block" }}
+      >
         <div className={cl.buttons_cont}>
           <button
             className={cl.buttons}
             onClick={handleBack}
             disabled={activeStep === 0}
           >
-            <img src={left}/>
+            <img src={left} />
           </button>
           <button
             className={cl.buttons}
             onClick={handleNext}
             disabled={activeStep === banners.length - 1}
           >
-            <img src={right}/>
+            <img src={right} />
           </button>
         </div>
       </div>
-      {
-        showform ? <Form show={showform} setShow={setShowform}/> : null
-      }
+      {showform ? <Form answer={showAnswer} setAnswer={setShowAnswer} show={showform} setShow={setShowform} /> : null}
     </div>
   );
 };

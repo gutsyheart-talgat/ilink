@@ -3,8 +3,10 @@ import cl from "./main.module.scss";
 import food from "../../img/DogFood.svg";
 import avatar from '../../img/photo.jpg'
 import Slider from './Slider/Slider'
-
+import Success from '../Success/Success'
+import Fail from "../Fail/Fail";
 const Main = () => {
+  const [showAnswer, setShowAnswer] = useState(false)
   return (
     <div className={cl.main}>
       <h1>Добро пожаловать в академию!</h1>
@@ -31,9 +33,9 @@ const Main = () => {
               О себе:{" "}
               <span>
                 Всем привет! Меня зовут Талгат, мне 20 лет, я студент. Учусь на
-                программиста. Недавно, например, я начала проходить курс на
-                известной платформе, который поможет мне устроиться на работу
-                моей мечты!
+                программиста. Я прошел специализированные курсы по программированию. 
+                Проходил курсы у IT-academy при Кыргызской Ассоциации Разработчиков Программного Обеспечения и Услуг.
+                На данный момент прохожу стажировку в компании zettaSoft.
               </span>
             </p>
             <div className={cl.pet}>
@@ -45,7 +47,10 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <Slider/>
+      <div style={{display:"flex"}}>
+        <Slider showAnswer={showAnswer} setShowAnswer={setShowAnswer}/>
+        {showAnswer ? (<Success show={showAnswer} setShow={setShowAnswer}/>) : null }
+      </div>      
     </div>
   );
 };

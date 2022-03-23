@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import cl from "./form.module.scss";
 import { Formik } from "formik";
 import exit from "../../img/exit.svg";
 import plus from "../../img/plus.svg";
 import info from "../../img/info.svg";
 import * as yup from "yup";
+import jpg from "../../img/jpg.svg";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
+
 const initialValues = {
   name: "",
   desc: "",
@@ -14,11 +18,29 @@ const validateSchema = yup.object().shape({
   name: yup.string().required("Введите ваше имя!"),
   desc: yup.string().required("Введите ваше имя!"),
 });
-const Form = ({ show, setShow }) => {
+const Form = ({ show, setShow,answer,setAnswer }) => {
+  const [progress, setProgress] = React.useState(0);
+  const [prog, setProg] = React.useState(false);
+  
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+       setProgress((oldProgress) => {
+        
+        const diff = Math.random() * 10;
+        return Math.min(oldProgress + diff, 100);
+      });
+    }, 500);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
   const pressBtn = () => {
     let data = new FormData();
     data.append("photo", initialValues.photo);
+    setProg(true);
   };
+  console.log(progress);
   return (
     <div className={cl.Form__container}>
       <div className={cl.Form}>
@@ -32,6 +54,7 @@ const Form = ({ show, setShow }) => {
           onSubmit={(values) => {
             alert([`${JSON.stringify(values, null, 4)}`]);
             setShow(false);
+            setAnswer(true)
           }}
           initialValues={initialValues}
           className={cl.formik}
@@ -62,6 +85,17 @@ const Form = ({ show, setShow }) => {
                   />
                 </label>
               </div>
+              {values.photo.length ? (
+              <div className={cl.getPhoto}>
+                <div>
+                  <img src={jpg} />
+                  <p>{values.photo}</p>
+                </div>
+                <Box sx={{ width: "100%" }}>
+                  <LinearProgress sx={{display: 'block'}} variant="determinate" value={progress} />
+                </Box>
+              </div>
+              ) : null} 
               {errors.name && touched.name && (
                 <p className={cl.error}>{errors.name}</p>
               )}

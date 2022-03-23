@@ -1,0 +1,41 @@
+.fail {
+    padding: 16px 24px 23px 24px;
+    width: 100%;
+    background: #F64B3C;
+    border-radius: 32px;
+    display: flex;
+    align-items: flex-start;
+    grid-column-gap: 30px;
+    max-width: 438px;
+    box-sizing: border-box;
+    .failImg{
+      margin-top: -42px;
+      width: 69px;
+      height: 69px;
+    }
+    div {
+      h2 {
+        font-family: "Factor A";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: -0.035em;
+        color: #333333;
+        margin: 0;
+        @media (max-width: 576px) {
+          font-size: 24px;
+          line-height: 28px;
+        }
+      }
+      p {
+        font-family: "Gilroy";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #333333;
+        margin: 0;
+      }
+    }
+  }
